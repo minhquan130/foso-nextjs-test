@@ -1,9 +1,8 @@
 'use client'
 
 import { Product } from '@/types/product'
-import { formatCurrency } from '@/utils/formatCurrency'
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import ProductCard from '../ProductCard'
 
 export default function CarouselProducts() {
     const [products, setProducts] = useState<Product[]>([])
@@ -50,22 +49,7 @@ export default function CarouselProducts() {
                     <path d="M15 5L9 12L15 19" stroke="#013065" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </button>
-            {visibleProducts.map((product: Product) => {
-                const newPrice = formatCurrency(product.price * (100 - product.discount) / 100);
-                const oldPrice = formatCurrency(product.price);
-                return (
-                    <div
-                        key={product.id}
-                        className='bg-white min-w-[calc(20%-24px)] p-4 font-bold rounded-lg flex flex-col gap-2'
-                    >
-                        <Image src={product.image} alt='product' width={250} height={250} className='h-[250px] w-[250px]' />
-                        <span className='line-clamp-2'>{product.name}</span>
-                        <span className='text-[#B71D18]'>{newPrice}</span>
-                        <del className='text-[#919EAB]'>{oldPrice}</del>
-                        <button className='bg-[#E6F1FF] text-[#025FCA] rounded-lg p-2'>Mua ngay</button>
-                    </div>
-                )
-            })}
+            {visibleProducts.map((product: Product) => <ProductCard key={product.id} product={product} />)}
             <button
                 onClick={handleNext}
                 className='absolute top-1/2 -translate-y-1/2 bg-[#CDE4FE] p-2 rounded-full right-0 opacity-70 hover:opacity-100 transform duration-150'
