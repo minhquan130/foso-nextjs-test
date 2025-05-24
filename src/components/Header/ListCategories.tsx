@@ -1,7 +1,7 @@
 import { Category } from "@/types/category"
 
 export default async function ListCategories() {
-    const categories = await fetch('http://localhost:3000/api/categories').then(res => res.json())
+    const categories = await fetch(process.env.NEXT_PUBLIC_SITE_URL + 'api/categories').then(res => res.json())
 
     return (
         <div className="flex shadow-2xl">
