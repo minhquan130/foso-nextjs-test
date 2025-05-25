@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
     price: Math.floor(Math.random() * 30000000) + 1000000,
     description: `Mô tả chi tiết cho sản phẩm ${index + 1}`,
     image: `/images/product-${Math.floor(Math.random() * 5) + 1}.png`,
-    category: Math.floor(Math.random() * 4) + 1,
+    category: Math.floor(Math.random() * 8) + 1,
     brand: ['Apple', 'Samsung', 'Dell', 'HP', 'Lenovo', 'Asus'][Math.floor(Math.random() * 6)],
     stock: Math.floor(Math.random() * 100) + 1,
     rating: Number((Math.random() * 2 + 3).toFixed(1)),

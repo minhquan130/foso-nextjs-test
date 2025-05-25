@@ -20,7 +20,7 @@ const MainMenu = async () => {
                     </svg>
                 </span>
             </button>
-            <div className='absolute bg-[#F4F6F8] w-[1200px] text-black rounded-lg opacity-0 group-hover:opacity-100 transform duration-300 pointer-events-none group-hover:pointer-events-auto'>
+            <div className='absolute bg-[#F4F6F8] w-[1400px] text-black rounded-lg opacity-0 group-hover:opacity-100 transform duration-300 pointer-events-none group-hover:pointer-events-auto z-50'>
                 <ListCategories />
             </div>
         </div>
