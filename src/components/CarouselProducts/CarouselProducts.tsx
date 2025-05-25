@@ -49,7 +49,7 @@ export default function CarouselProducts() {
                     <path d="M15 5L9 12L15 19" stroke="#013065" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </button>
-            {visibleProducts.map((product: Product) => <ProductCard key={product.id} product={product} />)}
+            {visibleProducts.map((product: Product) => <ProductCard key={product.id} product={product} span={5} />)}
             <button
                 onClick={handleNext}
                 className='absolute top-1/2 -translate-y-1/2 bg-[#CDE4FE] p-2 rounded-full right-0 opacity-70 hover:opacity-100 transform duration-150'

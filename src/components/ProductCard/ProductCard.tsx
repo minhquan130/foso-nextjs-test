@@ -4,14 +4,14 @@ import { formatDiscount } from '@/utils/formatDiscount';
 import Image from 'next/image';
 import React from 'react'
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({ product, span = 5 }: { product: Product, span: number }) {
     const newPrice = formatCurrency(product.price * (100 - product.discount) / 100);
     const oldPrice = formatCurrency(product.price);
     const discount = formatDiscount(product.discount);
     return (
         <div
             key={product.id}
-            className='bg-white min-w-[calc(20%-24px)] p-4 rounded-lg flex flex-col gap-2'
+            className={`bg-white min-w-[calc(${100 / span}%-24px)] p-4 rounded-lg flex flex-col gap-2`}
         >
             <Image src={product.image} alt='product' width={250} height={250} className='h-[250px] w-[250px]' />
             <span className='line-clamp-2 font-bold'>{product.name}</span>
@@ -24,3 +24,11 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
     )
 }
+
+
+
+
+
+
+
+

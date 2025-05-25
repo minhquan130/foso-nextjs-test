@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header>
       <TopHeader />
-      <div className='bg-white pb-4'>
+      <div className='bg-white'>
         <MainHeader />
         <MenuHeader />
       </div>
